@@ -114,8 +114,8 @@ unfold out.
 intros.
 intuition.
 left;Between.
-eapply l5_3;eauto.
-eapply l5_1;eauto.
+eapply l5_3; eauto.
+eauto using l5_1.
 right;Between.
 Qed.
 
