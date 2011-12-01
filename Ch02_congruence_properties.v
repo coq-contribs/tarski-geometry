@@ -18,7 +18,7 @@ Proof.
 eTarski.
 Qed.
 
-Hint Resolve cong_symmetry : sTarski.
+Hint Immediate cong_symmetry : sTarski.
 
 Ltac sTarski := auto with Tarski sTarski.
 Ltac esTarski := eauto with Tarski sTarski.
@@ -29,7 +29,11 @@ Proof.
 eTarski.
 Qed.
 
-Hint Resolve cong_transitivity : Tarski.
+(* The following hint has been disabled since it isn't necessary
+   (cf. cong_inner_transitivity + cong_symmetry) and it may interact badly
+   with cong_inner_transitivity to create proofs with remaining evars *)
+
+(*Hint Resolve cong_transitivity : Tarski.*)
 
 Lemma cong_left_commutativity : forall A B C D,
   Cong A B C D -> Cong B A C D.
