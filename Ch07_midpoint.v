@@ -4,6 +4,8 @@
 
 Require Export Ch06_out_lines.
 
+Unset Regular Subst Tactic.
+
 Definition is_midpoint := fun M A B => Bet A M B /\ Cong A M M B.
 
 Lemma l7_2 : forall M A B, is_midpoint M A B -> is_midpoint M B A.

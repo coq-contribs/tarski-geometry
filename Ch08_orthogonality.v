@@ -4,6 +4,8 @@
 
 Require Export Ch07_midpoint.
 
+Unset Regular Subst Tactic.
+
 Definition Per := fun A B C => 
   exists C', is_midpoint B C C' /\ Cong A C A C'. 
 
